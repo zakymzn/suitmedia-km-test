@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:suitmedia_km_test/page2.dart';
+import 'package:suitmedia_km_test/utility/multi_argument.dart';
 
 class Page1 extends StatefulWidget {
+  static const route = '/page_1';
+
   const Page1({super.key});
 
   @override
@@ -16,6 +19,14 @@ class _Page1State extends State<Page1> {
   String reverseText(String input) {
     var chars = input.split('');
     return chars.reversed.join();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    nameController.dispose();
+    palindromeController.dispose();
   }
 
   @override
@@ -99,13 +110,9 @@ class _Page1State extends State<Page1> {
                     ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Page2(name: nameController.text),
-                            ),
-                          );
+                          Navigator.pushNamed(context, Page2.route,
+                              arguments:
+                                  MultiArgument(nameController.text, null));
                         }
                       },
                       child: Text('NEXT'),
