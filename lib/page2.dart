@@ -18,25 +18,27 @@ class Page2 extends StatelessWidget {
         ),
         title: Text('Second Screen'),
       ),
-      body: Container(
-        child: ListView(
-          children: [
-            Text('Welcome'),
-            Text(name),
-            Center(
-              child: Text('Selected User Name'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Page3(),
-                  ),
-                );
-              },
-              child: Text('Choose a User'),
-            ),
-          ],
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Welcome'),
+          Text(name),
+          Center(
+            child: Text('Selected User Name'),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Page3(),
+              ),
+            );
+          },
+          child: Text('Choose a User'),
         ),
       ),
     );
