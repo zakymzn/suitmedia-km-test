@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:suitmedia_km_test/page3.dart';
 
 class Page2 extends StatelessWidget {
-  const Page2({super.key});
+  final String name;
+
+  const Page2({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class Page2 extends StatelessWidget {
         child: ListView(
           children: [
             Text('Welcome'),
-            Text('John Doe'),
+            Text(name),
             Center(
               child: Text('Selected User Name'),
             ),
