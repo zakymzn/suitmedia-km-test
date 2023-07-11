@@ -11,7 +11,7 @@ routeSettings() {
     switch (settings.name) {
       case Page1.route:
         return MaterialPageRoute(
-          builder: (context) => Page1(),
+          builder: (context) => const Page1(),
         );
       case Page2.route:
         final args = settings.arguments as MultiArgument;
@@ -33,7 +33,7 @@ routeSettings() {
       default:
         return MaterialPageRoute(
           builder: (context) {
-            return Scaffold(
+            return const Scaffold(
               body: Center(
                 child: Text('Page not found :('),
               ),

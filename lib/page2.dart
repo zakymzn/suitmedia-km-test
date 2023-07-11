@@ -17,9 +17,9 @@ class Page2 extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -29,10 +29,10 @@ class Page2 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Welcome'),
+            const Text('Welcome'),
             Text(
               name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -41,12 +41,12 @@ class Page2 extends StatelessWidget {
               child: selectedUserName != null
                   ? Text(
                       selectedUserName!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                       ),
                     )
-                  : Text(
+                  : const Text(
                       'Selected User Name',
                       style: TextStyle(
                         fontSize: 32,
@@ -63,7 +63,7 @@ class Page2 extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, Page3.route, arguments: name);
           },
-          child: Text('Choose a User'),
+          child: const Text('Choose a User'),
         ),
       ),
     );

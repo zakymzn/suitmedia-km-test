@@ -41,7 +41,7 @@ class _Page1State extends State<Page1> {
             children: [
               TextFormField(
                 controller: nameController,
-                decoration: InputDecoration(hintText: 'Name'),
+                decoration: const InputDecoration(hintText: 'Name'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter name';
@@ -51,7 +51,7 @@ class _Page1State extends State<Page1> {
               ),
               TextFormField(
                 controller: palindromeController,
-                decoration: InputDecoration(hintText: 'Palindrome'),
+                decoration: const InputDecoration(hintText: 'Palindrome'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
@@ -71,7 +71,7 @@ class _Page1State extends State<Page1> {
                             context: context,
                             builder: (context) => Dialog(
                               child: Padding(
-                                padding: EdgeInsets.all(8),
+                                padding: const EdgeInsets.all(8),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -83,9 +83,9 @@ class _Page1State extends State<Page1> {
                                             reverseText(palindromeController
                                                 .text
                                                 .toLowerCase())) {
-                                          return Text('Not Palindrome');
+                                          return const Text('Not Palindrome');
                                         } else {
-                                          return Text('Is Palindrome');
+                                          return const Text('Is Palindrome');
                                         }
                                       },
                                     ),
@@ -93,7 +93,7 @@ class _Page1State extends State<Page1> {
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     ),
                                   ],
                                 ),
@@ -102,9 +102,9 @@ class _Page1State extends State<Page1> {
                           );
                         }
                       },
-                      child: Text('CHECK'),
+                      child: const Text('CHECK'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 16,
                     ),
                     ElevatedButton(
@@ -115,7 +115,7 @@ class _Page1State extends State<Page1> {
                                   MultiArgument(nameController.text, null));
                         }
                       },
-                      child: Text('NEXT'),
+                      child: const Text('NEXT'),
                     ),
                   ],
                 ),

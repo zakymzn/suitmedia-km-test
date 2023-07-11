@@ -21,9 +21,9 @@ class Page3 extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
-        title: Text('Third Screen'),
+        title: const Text('Third Screen'),
       ),
       body: ChangeNotifierProvider<UserListProvider>(
         create: (context) => UserListProvider(
@@ -33,7 +33,7 @@ class Page3 extends StatelessWidget {
         child: Consumer<UserListProvider>(
           builder: (context, state, _) {
             if (state.state == ResultState.loading) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (state.state == ResultState.hasData) {
@@ -65,7 +65,7 @@ class Page3 extends StatelessWidget {
                               if (loadingProgress == null) {
                                 return child;
                               } else {
-                                return SizedBox(
+                                return const SizedBox(
                                   width: 100,
                                   height: 100,
                                   child: Center(
@@ -78,12 +78,12 @@ class Page3 extends StatelessWidget {
                         ),
                         title: Text(
                           '${userData.firstName} ${userData.lastName}',
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
-                          '${userData.email}',
-                          style: TextStyle(
+                          userData.email,
+                          style: const TextStyle(
                             color: Colors.white,
                           ),
                         ),
@@ -104,7 +104,7 @@ class Page3 extends StatelessWidget {
                 child: Text(state.message),
               );
             } else {
-              return Center(
+              return const Center(
                 child: Text('?'),
               );
             }
