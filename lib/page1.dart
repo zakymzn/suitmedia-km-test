@@ -98,13 +98,15 @@ class _Page1State extends State<Page1> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                Page2(name: nameController.text),
-                          ),
-                        );
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Page2(name: nameController.text),
+                            ),
+                          );
+                        }
                       },
                       child: Text('NEXT'),
                     ),
